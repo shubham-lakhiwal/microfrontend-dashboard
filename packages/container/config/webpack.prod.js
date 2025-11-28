@@ -9,6 +9,7 @@ const prodConfigs = {
   mode: 'production', // now wbpk will do optimisations
   output: {
     filename: '[name].[contenthash].js',
+    publicPath: '/container/latest/',
   },
   plugins: [
     new ModuleFederationPlugin({
