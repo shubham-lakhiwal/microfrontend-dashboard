@@ -13,7 +13,8 @@ export default function MarketingApp() {
         if(pathname !== nextPathName) {
           history.push(nextPathName)
         }
-      }
+      },
+      path: history.location
     })
     history.listen(onParentNavigate)
   }, [])

@@ -12,6 +12,10 @@ const devConfig = {
     //   index: '/index.html'
     // }
   },
+  output: {
+    filename: '[name].[contenthash].js',
+    publicPath: '/',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html'
