@@ -12,6 +12,10 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.css$/i, // Matches files ending with .css
+        use: ['style-loader', 'css-loader'], // Apply style-loader and css-loader
+      },
     ]
   }
 }

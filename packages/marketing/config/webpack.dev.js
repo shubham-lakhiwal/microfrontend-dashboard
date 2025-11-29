@@ -7,9 +7,10 @@ const devConfig = {
   mode: 'development',
   devServer: {
     port: 8081,
-    historyApiFallback: {
-      index: './public/index.html'
-    }
+    historyApiFallback: true,
+    // historyApiFallback: {
+    //   index: '/index.html'
+    // }
   },
   plugins: [
     new HtmlWebpackPlugin({
