@@ -10,14 +10,18 @@ const generateClassName = createGenerateClassName({
 const SigninPage = lazy(() => import('./components/Signin'));
 const SignupPage = lazy(() => import('./components/Signup'));
 
-export default function App({history}) {
+export default function App({history, onSignIn}) {
   return <div className="auth">
     <StylesProvider generateClassName={generateClassName}>
       <Router history={history}>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
-            <Route path="/auth/signin" component={SigninPage} />
-            <Route path="/auth/signup" component={SignupPage} />
+            <Route path="/auth/signin">
+              <SigninPage onSignIn={onSignIn} />
+            </Route>
+            <Route path="/auth/signup">
+              <SignupPage onSignIn={onSignIn} />
+            </Route>
           </Switch>
         </Suspense>
       </Router>

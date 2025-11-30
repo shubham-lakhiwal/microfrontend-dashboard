@@ -10,13 +10,16 @@ const generateClassName = createGenerateClassName({
   productionPrefix: 'cont'
 })
 export default function App() {
+  const [signedIn, setSignedIn] = React.useState(false);
   return (
     <StylesProvider generateClassName={generateClassName}>
       <BrowserRouter>
-        <Header />
+        <Header isSignedIn={signedIn} onSignOut={() => setSignedIn(false)} />
         <Suspense fallback={<div>loading....</div>} >
           <Switch>
-            <Route path="/auth" component={AuthApp} />
+            <Route path="/auth" >
+              <AuthApp onSignIn={() => setSignedIn(true)} />
+            </Route>
             <Route path="/" component={MarketingApp} />
           </Switch>
         </Suspense>
