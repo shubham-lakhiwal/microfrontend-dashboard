@@ -81,6 +81,16 @@ export default function Header({ isSignedIn, onSignOut }) {
           >
             App
           </Typography>
+          {isSignedIn && <Button
+            color="primary"
+            variant="outlined"
+            className={classes.link}
+            component={RouterLink}
+            to={'/dashboard'}
+            onClick={onClick}
+          >
+            Dashboard
+          </Button>}
           <Button
             color="primary"
             variant="outlined"
